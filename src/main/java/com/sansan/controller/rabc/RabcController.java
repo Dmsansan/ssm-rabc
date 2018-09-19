@@ -9,19 +9,19 @@ import com.sansan.common.Response;
 
 @RestController
 @RequestMapping("/rabc")
-public class rabc {	
+public class RabcController {	
 	
 	@RequestMapping(value="/resourceTest", method=RequestMethod.GET, produces={ "application/json;charset=UTF-8" })
 	@ResponseBody
 	public Response rabc(){
-		System.out.println("进入GET控制器");
+		System.out.println("进入Get");
 		return new Response().success();
 	}
 	
 	@RequestMapping(value="/resourceTest", method=RequestMethod.POST, produces={ "application/json;charset=UTF-8" })
 	@ResponseBody
 	public Response rabctwo(){
-		System.out.println("进入POST控制器");
+		System.out.println("进入POST");
 		return new Response().success();
 	}
 }

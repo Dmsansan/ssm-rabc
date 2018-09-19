@@ -20,12 +20,17 @@
 	    <mvc:interceptor>  
 	        <mvc:mapping path="/**"/>  
 	        <!-- 定义在 mvc:interceptor 下面的 Interceptor，表示对特定的请求进行拦截 -->  
-	        <bean class="inters.RabcInterceptor"/>  
+	        <bean class="com.sansan.RabcInterceptor">
+	        <!-- 配置静态资源通过自定义拦截器 -->
+	        <property name="staticUrls">
+               <list>
+            		<value>/static/images</value>
+               </list>
+            </property>
+            </bean>
 	    </mvc:interceptor>  
-	</mvc:interceptors>  
-	
-	
-	
+	</mvc:interceptors> 
+
     <!--避免IE执行AJAX时，返回JSON出现下载文件 -->
     <bean id="mappingJacksonHttpMessageConverter"
         class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">
@@ -69,12 +74,7 @@
     <!-- 启用基于Spring的注解 -->
     <context:annotation-config/>
     <!-- 静态资源处理 -->
-    <mvc:resources mapping="/js/**" location="/js/" />  
-    <mvc:resources mapping="/lib/**" location="/lib/" />  
-    <mvc:resources mapping="/css/**" location="/css/" />  
-    <mvc:resources mapping="/images/**" location="/images/" /> 
-
-
+    <mvc:resources mapping="/static/**" location="/WEB-INF/static/" />  
     <!-- 国际化配置 -->
     <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource"> 
         <property name="basename"> 
