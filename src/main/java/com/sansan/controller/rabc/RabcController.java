@@ -14,14 +14,14 @@ public class RabcController {
 	@RequestMapping(value="/resourceTest", method=RequestMethod.GET, produces={ "application/json;charset=UTF-8" })
 	@ResponseBody
 	public Response rabc(){
-		System.out.println("进入Get");
+		System.out.println("杩涘叆Get");
 		return new Response().success();
 	}
 	
 	@RequestMapping(value="/resourceTest", method=RequestMethod.POST, produces={ "application/json;charset=UTF-8" })
 	@ResponseBody
 	public Response rabctwo(){
-		System.out.println("进入POST");
+		System.out.println("杩涘叆POST");
 		return new Response().success();
 	}
 }

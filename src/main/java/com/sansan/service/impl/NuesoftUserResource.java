@@ -12,10 +12,10 @@ public class NuesoftUserResource implements UserResourceInterface{
 	@Override
 	public List<HashMap<String, String>> setUserResource() {
 		HashMap<String, String> url = new HashMap<>(),url1 = new HashMap<>();
-		url.put("url", "/rabc/resourceTest1231");
+		url.put("url", "/rabc/resourceTest");
 		url.put("method", "GET");
-		
-		url1.put("url","/static/images");
+//		
+		url1.put("url","/static/images/*");
 		url1.put("method", "GET");
 		List<HashMap<String, String>> userResource = new ArrayList<>();
 		userResource.add(url);
@@ -28,7 +28,7 @@ public class NuesoftUserResource implements UserResourceInterface{
 		UserDetailsInfo userDetailsInfo = new UserDetailsInfo();
 //		userDetailsInfo.setPassWord("123456");
 		userDetailsInfo.setUserName("admin");
-		userDetailsInfo.setRole("USER");
+		userDetailsInfo.setRole("ROLE");
 		return userDetailsInfo;
 	}
 	

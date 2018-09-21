@@ -28,10 +28,10 @@ public class RabcInterceptor implements HandlerInterceptor{
 		boolean arg = true;
 		
 		UserResourceInterface userResourceInterface = new NuesoftUserResource();
-		//用户信息
+		//璐﹀彿淇℃伅
 		UserDetailsInfo userDetailsInfo = userResourceInterface.setUserInfo();
 		
-		//登录账号资源getUserResource
+		//璐﹀彿璧勬簮鍒楄〃
 		List<HashMap<String, String>> userResource = userResourceInterface.setUserResource();
 		
 		AuthorityDicede authorityDicede  = new AuthorityDicede();
